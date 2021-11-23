@@ -2,8 +2,6 @@ package baseballTest;
 
 import domain.Ball;
 import domain.Referee;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +17,9 @@ public class ballTest {
     // 결과를 또 하나의 객체에 담는다?
     // 결과 객체에 따라서 메시지를 전송?
 
-   Ball userBall;
-   Ball computerBall;
+    Ball userBall;
+    Ball computerBall;
+
     @Test
     @DisplayName("ball 번호가 1부터 9사이의 수 인지 검증하기")
     void valiNoTest() {
@@ -36,12 +35,13 @@ public class ballTest {
         assertThat(userBall.compareNo(computerBall)).isEqualTo(Referee.STRIKE);
 
     }
+
     @Test
     @DisplayName("두 공의 인덱스와 숫자 비교하기")
     void ballCompareWithIndex() {
 
-        assertThat(new Ball(8,1).compareNo(new Ball(8,1))).isEqualTo(Referee.STRIKE);
-        assertThat(new Ball(8,1).compareNo(new Ball(8,3))).isEqualTo(Referee.BALL);
-        assertThat(new Ball(8,1).compareNo(new Ball(3,6))).isEqualTo(Referee.NOTHING);
+        assertThat(new Ball(8, 1).compareNo(new Ball(8, 1))).isEqualTo(Referee.STRIKE);
+        assertThat(new Ball(8, 1).compareNo(new Ball(8, 3))).isEqualTo(Referee.BALL);
+        assertThat(new Ball(8, 1).compareNo(new Ball(3, 6))).isEqualTo(Referee.NOTHING);
     }
 }

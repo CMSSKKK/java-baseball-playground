@@ -8,7 +8,8 @@ public class Ball {
         this.ballNo = ballNo;
         this.index = 0;
     }
-    public Ball(int ballNo,int index) {
+
+    public Ball(int ballNo, int index) {
         this.ballNo = ballNo;
         this.index = index;
     }
@@ -16,20 +17,20 @@ public class Ball {
 
     public boolean isValiNo() {
 
-        if(this.ballNo <= 0 && this.ballNo > 9) {
+        if (this.ballNo <= 0 && this.ballNo > 9) {
             throw new IllegalArgumentException();
         }
-         return true;
+        return true;
     }
 
     public Referee compareNo(Ball ball) {
-       if(this.ballNo == ball.ballNo) {
-           if (this.index != ball.index) {
-               return Referee.BALL;
-           }
-           return Referee.STRIKE;
-       }
+        if (this.ballNo == ball.ballNo) {
+            if (this.index != ball.index) {
+                return Referee.BALL;
+            }
+            return Referee.STRIKE;
+        }
 
-       return Referee.NOTHING;
+        return Referee.NOTHING;
     }
 }
