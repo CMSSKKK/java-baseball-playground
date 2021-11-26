@@ -24,18 +24,6 @@ public class PlayResult {
         return strike == 3;
     }
 
-    public boolean ballAndStrike() {
-        if(this.noBall()) {
-            return false;
-        }
-
-        if(this.noStrike()) {
-            return false;
-        }
-
-        return true;
-    }
-
     public boolean noBall() {
         return this.getBall() == 0;
     }
@@ -45,9 +33,6 @@ public class PlayResult {
     }
 
     public boolean isNothing() {
-       if(this.noStrike() && this.noBall()) {
-           return true;
-       }
-       return false;
+        return this.noBall() && this.noStrike();
     }
 }

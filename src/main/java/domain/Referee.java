@@ -6,14 +6,11 @@ public class Referee {
     private static String strike = "스트라이크";
     private static String nothing ="낫싱";
 
-    public String basicOrder() {
-        return "숫자를 입력해 주세요 : ";
+    public void basicOrder() {
+        System.out.print("숫자를 입력해 주세요 : ");
     }
 
     public String reportResult(PlayResult playResult) {
-        if(playResult.ballAndStrike()) {
-            return playResult.getBall()+ball+playResult.getStrike()+strike;
-        }
 
         if(playResult.isNothing()) {
             return nothing;
@@ -31,6 +28,10 @@ public class Referee {
             return playResult.getBall()+ball;
         }
 
-        return nothing;
+        return playResult.getBall()+ball+playResult.getStrike()+strike;
+    }
+
+    public void printReport(PlayResult playResult) {
+        System.out.println(reportResult(playResult));
     }
 }

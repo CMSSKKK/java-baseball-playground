@@ -17,13 +17,13 @@ public class refereeTest {
 
     Balls computerBalls =  new Balls(Arrays.asList(1,2,3));
 
-    @Test
-    @DisplayName("숫자를 입력하세요")
-    void basicOrderTest() {
-        Referee referee = new Referee();
-        String command = referee.basicOrder();
-        assertThat(command).isEqualTo("숫자를 입력해 주세요 : ");
-    }
+//    @Test
+//    @DisplayName("숫자를 입력하세요")
+//    void basicOrderTest() {
+//        Referee referee = new Referee();
+//        //String command = referee.basicOrder();
+//        assertThat(command).isEqualTo("숫자를 입력해 주세요 : ");
+//    }
 
     @Test
     @DisplayName("결과값 출력하기 테스트 (낫싱)")
@@ -53,7 +53,7 @@ public class refereeTest {
     }
 
     @Test
-    @DisplayName("결과값 출력하기 테스트 (%d)")
+    @DisplayName("결과값 출력하기 테스트 (정답)")
     void reportResultTest_3스트라이크() {
         Referee referee = new Referee();
         PlayResult playResult = computerBalls.play(Arrays.asList(1,2,3));
