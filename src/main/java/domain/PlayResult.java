@@ -3,6 +3,7 @@ package domain;
 public class PlayResult {
     private int strike = 0;
     private int ball = 0;
+    private boolean continueGame = true;
 
     public void judge(BallStatus status) {
         if (status.isStrike())
@@ -21,6 +22,7 @@ public class PlayResult {
     }
 
     public boolean correctAnswer() {
+        this.continueGame = false;
         return strike == 3;
     }
 
